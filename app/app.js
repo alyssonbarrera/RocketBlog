@@ -91,7 +91,7 @@ input.addEventListener('keypress', search);
 input.addEventListener('keydown', mostrarSearch);
 */
 
-function search() {
+/* function search() {
     
     for(conteudo of post) {
         
@@ -105,7 +105,7 @@ function search() {
 }
 
 search()
-
+*/
 /* 
 
 // TESTES
@@ -162,3 +162,42 @@ window.onscroll = function scrollFunction () {
 }
 
 btnArrow.addEventListener("click", voltarParaTopo)
+
+let cadaTitulo = []
+
+function exibirTitles () {
+    for(let i = 0; i < post.length; i++) {
+        cadaTitulo.push(post[i].titulo)
+    }
+}
+
+exibirTitles()
+console.log(cadaTitulo)
+
+function search(e) {
+    total = e.length
+    if (e.keyCode != 32 || total > 1) {
+        for (let i = 0; i < cadaTitulo.length; i++) {
+            terms.innerHTML += `<option>${cadaTitulo[i]}</option>`;
+        }
+    }else {console.log('oi')}
+    
+}
+function mostrarSearch () {
+    while(terms.firstChild) {
+        terms.removeChild(terms.firstChild)
+    }
+}
+
+function limparLista () {
+    if (input.value === "") {
+        while(terms.firstChild) {
+            terms.removeChild(terms.firstChild)
+        }
+    } else(console.log('oi'))
+}
+
+button.addEventListener('click', limparLista)
+input.addEventListener('blur', limparLista)
+input.addEventListener('keypress', mostrarSearch)
+input.addEventListener('keypress', search);
