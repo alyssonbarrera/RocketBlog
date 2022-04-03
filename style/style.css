@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #FBF6FF
+
+}
+
+.navbar {
+    background-color: #290742;
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+}
+p, a, li {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    height: auto;
+    background-color: #290742;
+    border-bottom: 8px #4FFF4B solid;
+    padding: 2rem 5rem 5rem;
+}
+
+.content-header a:hover {
+    border-bottom: 1px solid #4FFF4B;
+    font-style: italic;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.navbar ul {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-left: 0;
+}
+
+.nav2 ul li a{
+    text-decoration: none;
+    color: white;
+    padding-left: 0.2rem;
+}
+
+.container-fluid a {
+    margin-right: 0;
+}
+
+.nav2 ul li a:hover {
+    border-left: 2px solid #4FFF4B;
+
+}
+
+.navbar ul li a:hover {
+    border-left: 2px solid #4FFF4B;
+
+}
+
+.navbar ul li a {
+    padding: 0;
+}
+
+
+button {
+    transform: translateX(-10px);
+    border: none !important;
+    background-color: #9E6DC2 !important;
+    height: 44px;
+}
+
+input {
+    background-color: #170027 !important;
+    border: none !important;
+    height: 44px;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0 2rem;
+    padding: 0;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+.input {
+    display: flex;
+}
+
+.form-control {
+    color: white !important;
+}
+
+.input input {
+    background-color: #170027;
+    height: 44px;
+    width: 300px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+}
+
+input::-webkit-calendar-picker-indicator {
+    display: none !important;
+}
+
+.input img {
+    background-color: #9E6DC2;
+    width: 70px;
+    height: 44px;
+}
+
+.container-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.content-header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-basis: 570px;
+    flex-grow: 1;
+}
+.container-header div:last-child {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
+}
+.container-header div:last-child img {
+    width: 100%;
+    
+}
+.content-header h1 {
+    font-size: 36px;
+    color: #9E6DC2;
+    font-weight: bold;
+    line-height: 1.5
+}
+
+.content-header p {
+    color: #FBF6FF;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.content-header a {
+    color: #9E6DC2;
+    font-weight: bold;
+    gap: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100px;
+}
+
+.destaque {
+    display: flex;
+    padding-top: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.post-grande {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 569px;
+    flex-grow: 1;
+    padding: 1rem 5rem;
+    transition: all .2s;
+    cursor: pointer;
+
+
+}
+
+.post-grande:hover {
+    transform: translateY(-10px);
+    transition: all .2s;
+}
+
+.post-grande img {
+    width: 100%;
+}
+
+.post-grande h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem
+}
+
+.post-grande p {
+    line-height: 1.6;
+}
+
+.posts {
+    display: flex;
+    padding: 2rem 5rem;
+    gap: 30px;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    flex-grow: 1;
+}
+
+.posts div {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 370px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    transition: all .2s;
+    cursor: pointer;
+
+}
+
+.posts div a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+.posts div:hover {
+    transform: translateY(-20px);
+    transition: all .2s;
+}
+
+.posts div img{
+    width: 100%
+}
+
+.div-post-destaque {
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 472px;
+    padding: 1rem 5rem;
+    flex-grow: 1;
+    flex-shrink: 1;
+    gap: 30px;
+
+
+}
+
+.post-destaque:first-child {
+    padding-bottom: 2rem;
+    border-bottom: 3px solid #F2E7FA;
+}
+
+.post-destaque:first-child:hover {
+    transform: translateY(-10px);
+    transition: all .2s;
+
+}
+
+.post-destaque:last-child:hover {
+    transform: translateY(-10px);
+    transition: all .2s;
+}
+
+.post-destaque {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all .2s;
+
+
+}
+
+.post-destaque h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem
+}
+
+.post-destaque p {
+    line-height: 1.6;
+}
+
+.posts div h2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.posts div p {
+    line-height: 1.6;
+}
+
+.btn-arrow {
+    background: none !important;
+    display: none;
+    bottom: 20px; 
+    cursor: pointer;
+    outline: none;
+    padding: 15px;
+    position: fixed; 
+    right: -5px; 
+    z-index: 99; 
+}
+.btn-arrow img {
+    height: 40px;
+    width: 40px;
+}
+
+@media screen and (max-width: 991px) {
+
+    .navbar {
+        margin-bottom: 2rem;
+    }
+
+    .navbar ul li a {
+        padding-left: 0.2rem !important;
+    }
+
+    .navbar-nav {
+        margin-bottom: 2rem !important;
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    .post-destaque:first-child {
+        padding-top: 2rem;
+        border-top: 3px solid #F2E7FA;
+    }
+    .post-destaque:last-child {
+        padding-bottom: 2rem;
+        border-bottom: 3px solid #F2E7FA;
+    }
+    
+    .container-fluid {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    header {
+        padding: 3rem
+    }
+
+    .destaque .post-grande{
+        padding: 2rem 3rem
+    }
+
+    .destaque .div-post-destaque {
+        padding: 0rem 3rem
+    }
+    
+    .destaque .div-post-destaque p {
+        margin-bottom: 0;
+    }
+
+    .posts{
+        padding: 2rem 3rem
+    }
+
+}
+
+@media screen and (min-width: 1441px) {
+   .content-header {
+        padding-right: 6rem;
+   }
+
+}
+
+@media screen and (max-width: 525px) {
+    .btn-arrow {
+        padding: 1px;
+        right: -6px; 
+    }
+}

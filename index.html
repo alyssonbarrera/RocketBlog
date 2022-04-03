@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>RocketBlog</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="./assets/logo.svg" alt=""></a>
+              <button id="btnNave" class="navbar-toggler btnNav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Sobre</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Categorias
+                    </a>
+                  <li class="nav-item">
+                    <a class="nav-link active">Contato</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <datalist id="searchterms" class="datalist">
+                    <option></option>
+                  </datalist>
+                  <input class="form-control me-2" type="search" list="searchterms" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit"><img src="./assets/search.svg" alt=""></button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+
+       <!--<nav class="nav2">
+            <img src="./assets/logo.svg" alt="">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Sobre</a></li>
+                <li><a href="">Categorias</a></li>
+                <li><a href="">Contato</a></li>
+            </ul>
+            <form class="d-flex">
+              <datalist id="searchterms" class="datalist">
+                <option></option>
+              </datalist>
+                <input class="form-control me-2" type="search" list="searchterms" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"><img src="./assets/search.svg" alt=""></button>
+              </form>
+        </nav> --> 
+        <div class="container-header">
+            <div class="content-header">
+                <h1>
+                    Veja o guia definitivo para conquistar seus objetivos como DEV em 2022
+                </h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique placerat hac. </p>
+                <a href="">Veja mais <img src="./assets/arrow-right.svg" alt=""></a>
+            </div>
+            <div>
+                <img src="./assets/featured-image.png" alt="">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="destaque">
+            <div class="post-grande">
+                <img src="./assets/post-1.png" alt="">
+                <p>Janeiro 04, 2022</p>
+                <h2>Começando no ReactJS em 2022</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.</p>
+            </div>
+            <div class="div-post-destaque">
+                <div class="post-destaque">
+                    <p>Janeiro 04, 2022</p>
+                    <h2>Conheça as principais técnicas para conseguir uma vaga internacional em programação</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.</p>    
+                </div>
+                <div class="post-destaque">
+                    <p>Janeiro 04, 2022</p>
+                    <h2>Veja a evolução do Front-end na prática</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.</p>    
+
+                </div>
+            </div>
+        </section>
+        <section class="posts">
+            
+           <!-- <div>
+                <img src="./assets/post-2.png" alt="">
+                <p>Janeiro 04, 2022</p>
+                <h2>10 dicas para conseguir a vaga desejada</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.</p>    
+            </div>
+            <div>
+                <img src="./assets/post-3.png" alt="">
+                <p>Janeiro 04, 2022</p>
+                <h2>Deixe seu código mais semântico com essas dicas</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.</p>    
+            </div>
+            <div>
+                <img src="./assets/post-4.png" alt="">
+                <p>Janeiro 04, 2022</p>
+                <h2>Use essas dicas nas suas aplicações mobile</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.</p>    
+            </div> -->
+        </section>
+        <button class="btn-arrow">
+          <img src="./assets/arrow.png" alt="">
+        </button>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./app/app.js"></script>
+</body>
+</html>
