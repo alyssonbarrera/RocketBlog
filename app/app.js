@@ -201,3 +201,9 @@ button.addEventListener('click', limparLista)
 input.addEventListener('blur', limparLista)
 input.addEventListener('keypress', mostrarSearch)
 input.addEventListener('keypress', search);
+
+if(window.screen.width <= 950) {
+    input.addEventListener('keydown', mostrarSearch)
+    input.addEventListener('keydown', search);
+
+}
