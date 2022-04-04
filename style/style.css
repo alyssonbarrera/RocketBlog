@@ -58,6 +58,10 @@ nav {
     padding-left: 0.2rem;
 }
 
+.post-0:focus {
+    border: 1px solid red;
+}
+
 .container-fluid a {
     margin-right: 0;
 }

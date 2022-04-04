@@ -5,23 +5,50 @@ let button = document.querySelector('.btn-outline-success')
 let btnNav = document.querySelector('#btnNave')
 let divNav = document.querySelector('#navbarSupportedContent')
 let btnArrow = document.querySelector('.btn-arrow')
+let destaqueSection = document.querySelector('.destaque')
 
 let post = [
+
     conteudo = {
         data: 'Janeiro 04, 2022',
-        imagem: 'img',
-        titulo: '10 dicas para conseguir a vaga desejada',
-        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.'
+        imagem: 'post-1.png',
+        titulo: 'Começando no ReactJS em 2022',
+        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.',
+        categoria: 'post-destaque'
     },
     conteudo = {
         data: 'Janeiro 04, 2022',
-        imagem: 'img',
+        imagem: 'none',
+        titulo: 'Conheça as principais técnicas para conseguir uma vaga internacional em programação',
+        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.',
+        categoria: 'post-simples'
+
+    },
+    conteudo = {
+        data: 'Janeiro 04, 2022',
+        imagem: 'none',
+        titulo: 'Veja a evolução do Front-end na prática',
+        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.',
+        categoria: 'post-simples'
+
+    },
+    conteudo = {
+        data: 'Janeiro 04, 2022',
+        imagem: 'post-2.png',
+        titulo: '10 dicas para conseguir a vaga desejada',
+        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.',
+        categoria: 'post-comum'
+    },
+    conteudo = {
+        data: 'Janeiro 04, 2022',
+        imagem: 'post-3.png',
         titulo: 'Deixe seu código mais semântico com essas dicas',
-        texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.'
+        texto: 'Lorem ipsum dolor st amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.',
+        categoria: 'post-comum'
     },
     /* conteudo = {
         data: 'Janeiro 04, 2022',
-        imagem: 'img',
+        imagem: 'post-3.png',
         titulo: 'Use essas dicas nas suas aplicações mobile',
         texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.'
     }*/
@@ -30,7 +57,9 @@ let post = [
 function mostrarPosts () {
 
     for (let i = 0; i < post.length; i++) {
-    postsSection.innerHTML += `<div class="postInserido"><img src="./assets/post-${i+2}.png" alt=""><p>${post[i].data}</p><h2>${post[i].titulo}</h2><p>${post[i].texto}</p></div>`;
+        if(post[i].categoria === 'post-comum') {
+            postsSection.innerHTML += `<div id="post-${i}" class="postInserido"><img src="./assets/${post[i].imagem}" alt=""><p>${post[i].data}</p><h2>${post[i].titulo}</h2><p>${post[i].texto}</p></div>`;
+        }
     }
 
 }
@@ -40,12 +69,40 @@ mostrarPosts()
 console.log(post)
 console.log(post[0].data)
 
-function addConteudo (data, titulo, texto) {
+
+function mostrarPostDestaque() {
+    let div = document.createElement('div')
+    for (let i = 0; i < post.length; i++) {
+        if(post[i].categoria === 'post-destaque') {
+            destaqueSection.prepend(div)
+            div.setAttribute('class', 'post-grande')
+            div.innerHTML += `<img id="post-${i}" src="./assets/${post[i].imagem}" alt=""><p>${post[i].data}</p><h2>${post[i].titulo}</h2><p>${post[i].texto}</p>`
+        }
+    }
+}
+
+mostrarPostDestaque()
+
+function mostrarPostSimples () {
+    let div = document.createElement('div')
+    for (let i = 0; i < post.length; i++) {
+        if(post[i].categoria === 'post-simples') {
+            destaqueSection.appendChild(div)
+            div.setAttribute('class', 'div-post-destaque')
+            div.innerHTML += `<div id="post-${i}" class="post-destaque"><p>${post[i].data}</p><h2>${post[i].titulo}</h2><p>${post[i].texto}</p></div>`
+        }
+    }
+}
+
+mostrarPostSimples()
+
+function addConteudo (data, imagem, titulo, texto, categoria) {
         post.push(conteudo = {
             data: data,
-            imagem: 'img',
+            imagem: imagem,
             titulo: titulo,
-            texto: texto
+            texto: texto,
+            categoria: categoria
         })
 
         while(postsSection.firstChild) {
@@ -56,7 +113,7 @@ function addConteudo (data, titulo, texto) {
     }
 
 
-addConteudo('Janeiro 04, 2022', 'Use essas dicas nas suas aplicações mobile', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.')
+addConteudo('Janeiro 04, 2022', 'post-4.png','Use essas dicas nas suas aplicações mobile', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique nibh nibh eu in aliquet ut adipiscing neque. Sed volutpat aenean sit vitae, sed tristique. Sed volutpat aenean.', 'post-comum')
 
 console.log(post)
 
@@ -122,22 +179,35 @@ function pesquisar() {
 
 
 function pesquisar () {
-    if(input.value === post[0].titulo) {
-        document.documentElement.scrollTop = 2300;
-    } else if (input.value === post[1].titulo) {
-        document.documentElement.scrollTop = 2750
-    } else if (input.value === post[2].titulo) {
-        document.documentElement.scrollTop = 4050
-    } else {}
+    for(let i = 0; i < post.length; i++) {
+        if(input.value === post[i].titulo) {
+            document.documentElement.scrollTop = 2300;
+        } else {}
+    }
     input.value = "" 
 }
+
+function irDiv () {
+    for (let i = 0; i < post.length; i++) {
+        if(input.value === post[i].titulo) {
+            window.location.href = `#post-${i}`
+        } else {}
+
+    }
+}
+
+button.addEventListener("click", irDiv )
 
 function prever(event) {
     event.preventDefault()
 }
 
-button.addEventListener('click', pesquisar)
-button.addEventListener('click', prever)
+function limparInput () {
+    if(input.value != "") {
+        input.value = "" 
+
+    }
+}
 
 function click () {
     btnNav.setAttribute('class', 'navbar-toggler collapsed')
@@ -145,7 +215,13 @@ function click () {
     divNav.setAttribute('class', 'navbar-collapse collapse')
 }
 
-button.addEventListener('click', click)
+if(window.screen.width > 950) {
+    button.addEventListener('click', click);
+    button.addEventListener('click', limparInput)
+    button.addEventListener('click', prever)
+
+
+}
 
 window.onscroll = function scrollFunction () {
 
@@ -178,7 +254,7 @@ function search(e) {
     total = e.length
     if (e.keyCode != 32 || total > 1) {
         for (let i = 0; i < cadaTitulo.length; i++) {
-            terms.innerHTML += `<option>${cadaTitulo[i]}</option>`;
+            terms.innerHTML += `<option><a href="post-${i}">${cadaTitulo[i]}</option>`;
         }
     }else {console.log('oi')}
     
@@ -197,13 +273,26 @@ function limparLista () {
     } else(console.log('oi'))
 }
 
-button.addEventListener('click', limparLista)
-input.addEventListener('blur', limparLista)
+function click2 () {
+    setTimeout(function () {
+        click();
+        limparInput()
+    }, 4000)
+}
+
 input.addEventListener('keypress', mostrarSearch)
 input.addEventListener('keypress', search);
+input.addEventListener('blur', mostrarSearch)
 
 if(window.screen.width <= 950) {
     input.addEventListener('keydown', mostrarSearch)
     input.addEventListener('keydown', search);
+    button.addEventListener('click', click2)
 
+}
+
+if(window.screen.width > 950) {
+    if(irDiv()) {
+        button.addEventListener('click', limparLista)
+    }
 }
