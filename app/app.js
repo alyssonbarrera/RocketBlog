@@ -255,7 +255,7 @@ function search(e) {
         for (let i = 0; i < cadaTitulo.length; i++) {
             terms.innerHTML += `<option><a href="post-${i}">${cadaTitulo[i]}</option>`;
         }
-    }else {console.log('oi')}
+    }else {}
     
 }
 function mostrarSearch () {
@@ -269,7 +269,7 @@ function limparLista () {
         while(terms.firstChild) {
             terms.removeChild(terms.firstChild)
         }
-    } else(console.log('oi'))
+    } else {}
 }
 
 function click2 () {
@@ -281,7 +281,8 @@ function click2 () {
 
 input.addEventListener('keypress', mostrarSearch)
 input.addEventListener('keypress', search);
-input.addEventListener('blur', mostrarSearch)
+input.addEventListener('blur', limparLista);
+button.addEventListener('click', limparLista);
 
 if(window.screen.width <= 950) {
     input.addEventListener('keydown', mostrarSearch)
