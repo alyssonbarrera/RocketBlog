@@ -377,7 +377,9 @@ input::-webkit-calendar-picker-indicator {
     header {
         padding: 3rem
     }
-
+    .destaque {
+        padding-top: 1rem;
+    }
     .destaque .post-grande{
         padding: 2rem 3rem
     }
