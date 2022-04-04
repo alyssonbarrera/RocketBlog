@@ -6,6 +6,7 @@ let btnNav = document.querySelector('#btnNave')
 let divNav = document.querySelector('#navbarSupportedContent')
 let btnArrow = document.querySelector('.btn-arrow')
 let destaqueSection = document.querySelector('.destaque')
+let btnNavbar = document.querySelector('.navbar-toggler-icon')
 
 let post = [
 
@@ -191,7 +192,7 @@ function irDiv () {
     for (let i = 0; i < post.length; i++) {
         if(input.value === post[i].titulo) {
             window.location.href = `#post-${i}`
-        } else {}
+        } else {console.log('oi')}
 
     }
 }
@@ -277,7 +278,7 @@ function click2 () {
     setTimeout(function () {
         click();
         limparInput()
-    }, 4000)
+    }, 3000)
 }
 
 input.addEventListener('keypress', mostrarSearch)
@@ -287,12 +288,15 @@ input.addEventListener('blur', mostrarSearch)
 if(window.screen.width <= 950) {
     input.addEventListener('keydown', mostrarSearch)
     input.addEventListener('keydown', search);
-    button.addEventListener('click', click2)
 
 }
 
 if(window.screen.width > 950) {
     if(irDiv()) {
         button.addEventListener('click', limparLista)
+        button.addEventListener('click', prever)
+        
     }
 }
+
+btnNavbar.addEventListener('click', limparInput)
