@@ -12,6 +12,16 @@ body {
 
 }
 
+body::-webkit-scrollbar {
+    background-color: #FBF6FF;
+    width: 10px;
+
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #290742;
+}
+
 .navbar {
     background-color: #290742;
 }
