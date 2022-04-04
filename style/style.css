@@ -130,6 +130,14 @@ li {
     color: white !important;
 }
 
+input:focus, button:focus {
+    box-shadow: none !important;
+}
+
+input::-webkit-search-cancel-button{
+    display: none !important;
+}
+
 .input input {
     background-color: #170027;
     height: 44px;
