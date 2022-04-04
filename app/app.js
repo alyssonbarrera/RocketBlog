@@ -197,7 +197,7 @@ function irDiv () {
     }
 }
 
-button.addEventListener("click", irDiv )
+button.addEventListener("click", irDiv)
 
 function prever(event) {
     event.preventDefault()
@@ -220,8 +220,6 @@ if(window.screen.width > 950) {
     button.addEventListener('click', click);
     button.addEventListener('click', limparInput)
     button.addEventListener('click', prever)
-
-
 }
 
 window.onscroll = function scrollFunction () {
@@ -288,6 +286,7 @@ input.addEventListener('blur', mostrarSearch)
 if(window.screen.width <= 950) {
     input.addEventListener('keydown', mostrarSearch)
     input.addEventListener('keydown', search);
+    button.addEventListener('click', prever)
 
 }
 
