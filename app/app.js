@@ -299,7 +299,7 @@ if(window.screen.width <= 950) {
 function click2 () {
     setTimeout(function () {
         irDiv();
-        click3()
+        mostrarSearch()
         limparInput()
     }, 100)
 }
@@ -331,7 +331,6 @@ function animeScroll () {
             element.classList.add(animationClass)
         }
     })
-    console.log(windowTop)
 }
 
 window.addEventListener('scroll', function () {
