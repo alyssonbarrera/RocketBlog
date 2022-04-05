@@ -7,6 +7,9 @@ let divNav = document.querySelector('#navbarSupportedContent')
 let btnArrow = document.querySelector('.btn-arrow')
 let destaqueSection = document.querySelector('.destaque')
 let btnNavbar = document.querySelector('.navbar-toggler-icon')
+let containerHeader = document.querySelector('.container-header')
+let contentHeader = document.querySelector('.content-header')
+let imgHeader = document.querySelector('#img-header')
 
 let post = [
 
@@ -59,7 +62,7 @@ function mostrarPosts () {
 
     for (let i = 0; i < post.length; i++) {
         if(post[i].categoria === 'post-comum') {
-            postsSection.innerHTML += `<div id="post-${i}" class="postInserido"><img src="./assets/${post[i].imagem}" alt=""><p>${post[i].data}</p><h2>${post[i].titulo}</h2><p>${post[i].texto}</p></div>`;
+            postsSection.innerHTML += `<div data-anime="top" id="post-${i}" class="postInserido"><img src="./assets/${post[i].imagem}" alt=""><p>${post[i].data}</p><h2>${post[i].titulo}</h2><p>${post[i].texto}</p></div>`;
         }
     }
 
@@ -77,6 +80,7 @@ function mostrarPostDestaque() {
         if(post[i].categoria === 'post-destaque') {
             destaqueSection.prepend(div)
             div.setAttribute('class', 'post-grande')
+            div.setAttribute('data-anime', 'left')
             div.innerHTML += `<img id="post-${i}" src="./assets/${post[i].imagem}" alt=""><p>${post[i].data}</p><h2>${post[i].titulo}</h2><p>${post[i].texto}</p>`
         }
     }
@@ -90,7 +94,7 @@ function mostrarPostSimples () {
         if(post[i].categoria === 'post-simples') {
             destaqueSection.appendChild(div)
             div.setAttribute('class', 'div-post-destaque')
-            div.innerHTML += `<div id="post-${i}" class="post-destaque"><p>${post[i].data}</p><h2>${post[i].titulo}</h2><p>${post[i].texto}</p></div>`
+            div.innerHTML += `<div data-anime="right" id="post-${i}" class="post-destaque"><p>${post[i].data}</p><h2>${post[i].titulo}</h2><p>${post[i].texto}</p></div>`
         }
     }
 }
@@ -224,7 +228,7 @@ if(window.screen.width > 950) {
 
 window.onscroll = function scrollFunction () {
 
-    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+    if (document.documentElement.scrollTop > 500) {
       btnArrow.style.display = "block";
 
     } else {
@@ -288,7 +292,22 @@ if(window.screen.width <= 950) {
     input.addEventListener('keydown', mostrarSearch)
     input.addEventListener('keydown', search);
     button.addEventListener('click', prever)
+    button.addEventListener('click', click2)
 
+}
+
+function click2 () {
+    setTimeout(function () {
+        irDiv();
+        click3()
+        limparInput()
+    }, 100)
+}
+
+function click3 () {
+    setTimeout(function () {
+        click()
+    }, 200)
 }
 
 if(window.screen.width > 950) {
@@ -300,3 +319,34 @@ if(window.screen.width > 950) {
 }
 
 btnNavbar.addEventListener('click', limparInput)
+
+let target = document.querySelectorAll('[data-anime]')
+let animationClass = 'animate'
+let dataHeader = document.querySelector('[data-header')
+
+function animeScroll () {
+    let windowTop = window.pageYOffset + ((window.innerHeight * 3)/4)
+    target.forEach(function (element) {
+        if(windowTop > element.offsetTop) {
+            element.classList.add(animationClass)
+        }
+    })
+    console.log(windowTop)
+}
+
+window.addEventListener('scroll', function () {
+    animeScroll()
+})
+
+window.onload = function () {
+    setTimeout(function () {
+        containerHeader.classList.add(animationClass)
+    }, 200);
+    setTimeout(function () {
+        contentHeader.classList.add(animationClass)
+    }, 300);
+    setTimeout(function () {
+        imgHeader.classList.add(animationClass)
+    }, 500)
+
+}
